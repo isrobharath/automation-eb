@@ -4,6 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh "gcc hello.c -o hello"
+                sh "./hello"
                 echo 'Building..'
             }
         }
