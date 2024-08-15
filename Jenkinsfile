@@ -4,9 +4,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "gcc hello.c -o hello"
-                sh "./hello"
-                echo 'Building..'
+                sh "cd build"
+                sh "cmake .."
+                sh 'make'
+                sh './hello'
             }
         }
         stage('Test') {
